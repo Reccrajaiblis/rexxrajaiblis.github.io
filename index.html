@@ -1,122 +1,77 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untuk Cila ❤️</title>
+    <title>CILA ❤️</title>
     <style>
         body {
-            background: pink;
-            font-family: Arial;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 15px;
-        }
-        .box {
-            max-width: 500px;
-            width: 100%;
-            background: white;
-            border-radius: 30px;
-            padding: 25px;
+            background: hotpink;
             text-align: center;
-            box-shadow: 0 10px 30px red;
+            padding: 20px;
+            font-family: Arial;
         }
-        h1 {
-            color: #d43f5e;
-            font-size: 45px;
-            margin: 0 0 15px 0;
-        }
-        img {
-            max-width: 100%;
-            max-height: 350px;
-            border-radius: 30px;
-            border: 4px solid hotpink;
-            margin: 15px 0;
-        }
-        .tombol {
-            background: #ff4d6d;
-            color: white;
-            border: none;
-            padding: 18px;
-            font-size: 22px;
-            border-radius: 50px;
-            width: 100%;
-            margin: 8px 0;
-            font-weight: bold;
-        }
-        .tombol.ungu {
-            background: #a55c7b;
-        }
-        .pesan {
-            background: #ffe4e9;
+        .kotak {
+            background: white;
+            max-width: 400px;
+            margin: auto;
             padding: 20px;
             border-radius: 30px;
-            margin: 15px 0;
-            font-size: 18px;
-            color: #b23b4b;
-            border-left: 5px solid #ff4d6d;
-            min-height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        .counter {
-            background: #ffe4e9;
-            padding: 12px;
-            border-radius: 40px;
-            margin: 15px 0;
-            font-size: 18px;
-            font-weight: bold;
-            color: #a53860;
+        h1 {
+            color: red;
+            font-size: 50px;
+            margin: 0;
         }
-        .footer {
-            color: #a53860;
-            margin-top: 15px;
-            font-size: 14px;
+        img {
+            width: 100%;
+            max-height: 350px;
+            border-radius: 30px;
+            border: 5px solid pink;
+            margin: 15px 0;
+        }
+        button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 20px;
+            border-radius: 50px;
+            width: 100%;
+            margin: 5px 0;
         }
         audio {
             width: 100%;
-            margin: 10px 0;
+            margin: 15px 0;
+        }
+        p {
+            font-size: 20px;
+            color: darkred;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="box">
+    <div class="kotak">
         <h1>❤️ CILA ❤️</h1>
         
-        <!-- Lagu -->
+        <!-- LAGU NYA -->
         <audio controls>
             <source src="https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/videoplayback.webm">
         </audio>
         
-        <!-- Foto -->
+        <!-- FOTO NYA -->
         <img id="foto" src="https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg">
         
-        <!-- Pesan -->
-        <div class="pesan" id="pesan">
-            CILA, KAMU CANTIK BANGET ❤️
-        </div>
+        <!-- TOMBOL -->
+        <button onclick="gantiFoto()">GANTI FOTO</button>
+        <button onclick="resetFoto()">RESET</button>
         
-        <!-- Tombol -->
-        <button class="tombol" onclick="ganti()">GANTI FOTO</button>
-        <button class="tombol ungu" onclick="reset()">RESET</button>
-        
-        <!-- Counter -->
-        <div class="counter" id="counter">
-            Foto ke 1 dari 10
-        </div>
-        
-        <div class="footer">
-            Buat Cila tersayang 💕
-        </div>
+        <!-- PESAN -->
+        <p id="tulisan">Foto ke 1 dari 10</p>
     </div>
 
     <script>
-        // Daftar 10 foto
-        const foto = [
+        // 10 FOTO CILA (UDAH LENGKAP)
+        const daftarFoto = [
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0041.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0042.jpg',
@@ -129,122 +84,25 @@
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png'
         ];
 
-        // Pesan romantis
-        const pesanList = [
-            "CILA, CANTIK BANGET!",
-            "SENYUM KAMU MANIS",
-            "FOTO INI FAVORIT AKU",
-            "KAMU BINTANGKU",
-            "CILA SAYANG ❤️",
-            "CANTIKNYA GA BOSEN",
-            "HARI INI CERAH KARENA KAMU",
-            "CILA IS THE BEST",
-            "MAKIN CINTA SAMA CILA",
-            "10 FOTO, 1 HATI"
-        ];
-
-        let nomor = 0;
+        let urutan = 0;
         const gambar = document.getElementById('foto');
-        const teksPesan = document.getElementById('pesan');
-        const teksCounter = document.getElementById('counter');
+        const keterangan = document.getElementById('tulisan');
 
-        function ganti() {
-            nomor = (nomor + 1) % foto.length;
-            gambar.src = foto[nomor];
-            teksCounter.innerText = 'Foto ke ' + (nomor + 1) + ' dari 10';
-            
-            // Pesan random
-            const acak = Math.floor(Math.random() * pesanList.length);
-            teksPesan.innerText = '❤️ ' + pesanList[acak] + ' ❤️';
+        function gantiFoto() {
+            urutan = urutan + 1;
+            if (urutan > 9) urutan = 0;
+            gambar.src = daftarFoto[urutan];
+            keterangan.innerText = 'Foto ke ' + (urutan + 1) + ' dari 10';
         }
 
-        function reset() {
-            nomor = 0;
-            gambar.src = foto[0];
-            teksCounter.innerText = 'Foto ke 1 dari 10';
-            teksPesan.innerText = 'CILA, KAMU CANTIK BANGET ❤️';
+        function resetFoto() {
+            urutan = 0;
+            gambar.src = daftarFoto[0];
+            keterangan.innerText = 'Foto ke 1 dari 10';
         }
     </script>
 </body>
-</html>    <div class="pesan-romantis" id="pesanRomantis">
-            ❤️ Cila, kamu alasan aku tersenyum hari ini ❤️
-        </div>
-        
-        <div class="footer">
-            <p>10 foto, 10 alasan, 1 hati buat Cila 💕</p>
-        </div>
-    </div>
-
-    <script>
-        // ========== KONFIGURASI FOTO CILA (SUDAH DIISI LENGKAP) ==========
-        const fotoList = [
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg', // foto1
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0041.jpg', // foto2
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0042.jpg', // foto3
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0006.jpg', // foto4
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0007.jpg', // foto5
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0010.jpg', // foto6
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0011.jpg', // foto7 (link sudah diperbaiki)
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0013.jpg', // foto8
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0014.jpg', // foto9
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png' // foto10
-        ];
-        
-        // ========== PESAN ROMANTIS ==========
-        const pesanList = [
-            "❤️ Cila, senyum kamu tuh kayak sunrise di hati aku.",
-            "🥰 Setiap liat foto kamu, rasanya dunia jadi indah.",
-            "💕 Dari 10 foto ini, yang paling aku suka ya kamu aslinya.",
-            "🌹 Cila, kamu tuh alasan aku bangun pagi dengan senyum.",
-            "✨ Kalo cinta itu berat, berarti aku angkat beban tiap hari mikirin kamu.",
-            "😘 10 foto, 10 alasan buat makin cinta sama kamu.",
-            "💗 Kamu tuh kayak bintang, selalu bersinar walaupun gelap.",
-            "🎈 Aku rela antri sepanjang hayat, asal ujungnya kamu.",
-            "💘 Cilaaaa... tahu gak? aku lagi senyum-senyum sendiri ngetik ini.",
-            "🔥 Pokoknya, Cila is the best thing in my life!"
-        ];
-        
-        // ========== VARIABEL ==========
-        let fotoIndex = 0;
-        let cintaCount = 0;
-        let fotoCounter = 1;
-        
-        // ========== ELEMENT REFERENCES ==========
-        const fotoElement = document.getElementById('fotoCila');
-        const fotoCounterElement = document.getElementById('fotoCounter');
-        const cintaCounterElement = document.getElementById('cintaCounter');
-        const progressBar = document.getElementById('progressBar');
-        const pesanElement = document.getElementById('pesanRomantis');
-        
-        // ========== FUNGSI GELEMBUNG LOVE ==========
-        function createLoveBubbles(jumlah = 15) {
-            const loveSymbols = ['❤️', '💕', '💗', '💓', '💖', '💘', '💝', '💞', '💟', '😍', '🥰', '😘'];
-            
-            for (let i = 0; i < jumlah; i++) {
-                setTimeout(() => {
-                    const bubble = document.createElement('div');
-                    bubble.className = 'love-bubble';
-                    
-                    const randomLove = loveSymbols[Math.floor(Math.random() * loveSymbols.length)];
-                    bubble.innerHTML = randomLove;
-                    
-                    bubble.style.left = Math.random() * window.innerWidth + 'px';
-                    bubble.style.bottom = '0px';
-                    bubble.style.top = 'auto';
-                    
-                    const size = Math.random() * 30 + 20;
-                    bubble.style.fontSize = size + 'px';
-                    
-                    const hue = Math.random() * 20 + 340;
-                    bubble.style.color = `hsl(${hue}, 80%, 70%)`;
-                    
-                    bubble.style.animationDelay = Math.random() * 0.5 + 's';
-                    
-                    document.body.appendChild(bubble);
-                    
-                    setTimeout(() => {
-                        bubble.remove();
-                    }, 4000);
+</html> }, 4000);
                 }, i * 50);
             }
         }
