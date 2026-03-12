@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>❤️ 10 Foto Cila ❤️</title>
+    <title>❤️ CILA ❤️</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -26,18 +26,18 @@
             width: 100%;
             background: white;
             border-radius: 40px;
-            padding: 25px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(255, 0, 100, 0.3);
+            box-shadow: 0 20px 40px rgba(255, 0, 100, 0.2);
         }
         
         h1 {
             color: #d43f5e;
             font-size: 3em;
             margin-bottom: 20px;
+            text-align: center;
         }
         
-        /* Music Player */
         .music-player {
             background: #ffe4e9;
             border-radius: 30px;
@@ -47,57 +47,86 @@
         
         audio {
             width: 100%;
-            height: 50px;
+            height: 45px;
         }
         
         .foto-container {
             margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 350px;
+            background: #fff0f5;
+            border-radius: 30px;
+            padding: 15px;
         }
         
         #fotoCila {
             max-width: 100%;
-            max-height: 350px;
+            max-height: 320px;
+            width: auto;
+            height: auto;
             border-radius: 30px;
-            border: 5px solid #ffb6c1;
+            border: 4px solid #ffb6c1;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+        
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
         }
         
         .btn-cinta {
             background: #ff4d6d;
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border-radius: 50px;
+            padding: 18px;
+            font-size: 1.3em;
+            border-radius: 60px;
             cursor: pointer;
-            margin: 10px 0;
             width: 100%;
+            font-weight: bold;
+            border: 2px solid white;
         }
         
         .btn-reset {
             background: #a55c7b;
-            margin-top: 5px;
         }
         
         .counter {
-            margin: 15px 0;
-            font-size: 1.2em;
+            background: #ffe4e9;
             color: #a53860;
+            padding: 12px;
+            border-radius: 40px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
         }
         
         .love-letter {
-            background: #ffe4e9;
-            padding: 15px;
-            border-radius: 30px;
-            margin: 15px 0;
-            font-size: 1.1em;
+            background: #fff0f5;
             color: #d43f5e;
-            min-height: 70px;
+            padding: 20px;
+            border-radius: 30px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 5px solid #ff4d6d;
+            text-align: center;
         }
         
         .footer {
             margin-top: 20px;
             color: #a53860;
+            font-size: 1em;
+            text-align: center;
         }
     </style>
 </head>
@@ -105,35 +134,36 @@
     <div class="container">
         <h1>❤️ CILA ❤️</h1>
         
-        <!-- Player Lagu -->
+        <!-- Music Player -->
         <div class="music-player">
             <audio controls>
                 <source src="https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/videoplayback.webm" type="audio/webm">
-                Browser tidak support
             </audio>
         </div>
         
-        <!-- Foto -->
+        <!-- Foto (UDAH DI TENGAH) -->
         <div class="foto-container">
             <img id="fotoCila" src="">
         </div>
         
-        <!-- Pesan -->
+        <!-- Pesan Cinta -->
         <div class="love-letter" id="pesan">
-            ❤️ CILA, KAMU SPESIAL ❤️
+            CILA, KAMU SPESIAL BUAT AKU ❤️
         </div>
         
         <!-- Tombol -->
-        <button class="btn-cinta" id="nextBtn">GANTI FOTO</button>
-        <button class="btn-cinta btn-reset" id="resetBtn">RESET</button>
+        <div class="btn-group">
+            <button class="btn-cinta" id="nextBtn">✨ GANTI FOTO ✨</button>
+            <button class="btn-cinta btn-reset" id="resetBtn">💕 RESET 💕</button>
+        </div>
         
         <!-- Counter -->
         <div class="counter" id="counter">
-            Foto ke: <span id="fotoKe">1</span>/10
+            📸 Foto ke: <span id="fotoKe">1</span>/10
         </div>
         
         <div class="footer">
-            ✨ Buat Cila tersayang ✨
+            💝 Buat Cila, yang paling spesial 💝
         </div>
     </div>
 
@@ -154,11 +184,16 @@
 
         // Pesan romantis
         const pesanList = [
-            "CILA... KAMU CANTIK BANGET!",
-            "SENYUM KAMU BIKIN HARI INI CERAH",
-            "SETIAP FOTO KAMU SELALU BUAT AKU TERBAWA",
+            "CILA, KAMU CANTIK BANGET HARI INI!",
+            "SENYUM KAMU BIKIN DUNIA CERAH",
+            "SETIAP LIHAT FOTOMU, HATIKU BERGETAR",
             "KAMU BINTANG YANG PALING TERANG",
-            "CILA, AKU SAYANG KAMU!"
+            "CILA, AKU SAYANG BANGET SAMA KAMU",
+            "KAMU ALASAN AKU TERSENYUM",
+            "CANTIKNYA GA BOSEN-BOSEN DILIHAT",
+            "CILA IS THE BEST!",
+            "HARI INI MAKIN CINTA SAMA CILA",
+            "10 FOTO, 10 ALASAN CINTA"
         ];
 
         let index = 0;
@@ -166,6 +201,7 @@
         const fotoSpan = document.getElementById('fotoKe');
         const pesanDiv = document.getElementById('pesan');
 
+        // Set foto pertama
         img.src = fotoList[0];
 
         function gantiFoto() {
@@ -173,7 +209,7 @@
             img.src = fotoList[index];
             fotoSpan.innerText = index + 1;
             
-            // Ganti pesan random
+            // Pesan random
             const random = Math.floor(Math.random() * pesanList.length);
             pesanDiv.innerText = "❤️ " + pesanList[random] + " ❤️";
         }
@@ -182,203 +218,14 @@
             index = 0;
             img.src = fotoList[0];
             fotoSpan.innerText = '1';
-            pesanDiv.innerText = "❤️ CILA, KAMU SPESIAL ❤️";
+            pesanDiv.innerText = "CILA, KAMU SPESIAL BUAT AKU ❤️";
         }
 
         document.getElementById('nextBtn').onclick = gantiFoto;
         document.getElementById('resetBtn').onclick = reset;
     </script>
 </body>
-</html>aiblis.github.io/main/IMG-20260309-WA0010.jpg',
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0011.jpg',
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0013.jpg',
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0014.jpg',
-            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png'
-        ];
-
-        // === PESAN ROMANTIS ===
-        const pesanList = [
-            "💕 CILA... SETIAP LIHAT FOTOMU, HATIKU TERBANG 💕",
-            "✨ KAYAK FOTO INI, CINTAKU JUGA TERBANG KE KAMU ✨",
-            "🌹 KAMU BIKIN DUNIA INI JAUH LEBIH INDAH 🌹",
-            "💘 TERBANGLAH SELAMANYA DI HATIKU, CILA 💘",
-            "🥰 SENYUMMU BIKIN HARI INI SEMPURNA 🥰",
-            "💝 10 FOTO, 10 ALASAN CINTA PADAMU 💝",
-            "🌟 KAMU BINTANG YANG PALING TERANG 🌟",
-            "🎈 HIDUP INI INDAH KARENA KAMU 🎈",
-            "💞 CILA, AKU SAYANG KAMU! 💞",
-            "🔥 CILA IS THE BEST! 🔥"
-        ];
-
-        let index = 0;
-        let cinta = 0;
-        
-        const img = document.getElementById('fotoCila');
-        const fotoKeSpan = document.getElementById('fotoKe');
-        const cintaSpan = document.getElementById('cintaKe');
-        const loveLetter = document.getElementById('loveLetter');
-        
-        // Set foto pertama
-        img.src = fotoList[0];
-
-        // === FUNGSI BUAT HEART TERBANG ===
-        function createFlyingHearts(jumlah = 10) {
-            const container = document.getElementById('floatingHearts');
-            for (let i = 0; i < jumlah; i++) {
-                setTimeout(() => {
-                    const heart = document.createElement('div');
-                    heart.className = 'heart';
-                    heart.innerHTML = ['❤️','💕','💗','💓','💖','💘'][Math.floor(Math.random() * 6)];
-                    heart.style.left = Math.random() * 100 + '%';
-                    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
-                    container.appendChild(heart);
-                    
-                    setTimeout(() => {
-                        heart.remove();
-                    }, 6000);
-                }, i * 200);
-            }
-        }
-
-        // === FUNGSI GANTI FOTO ===
-        function gantiFoto() {
-            index = (index + 1) % fotoList.length;
-            img.src = fotoList[index];
-            
-            fotoKeSpan.innerText = index + 1;
-            
-            cinta++;
-            cintaSpan.innerText = cinta;
-            
-            // Ganti pesan romantis
-            const randomPesan = pesanList[Math.floor(Math.random() * pesanList.length)];
-            loveLetter.innerHTML = randomPesan;
-            
-            // Animasi love letter
-            loveLetter.style.animation = 'none';
-            void loveLetter.offsetHeight;
-            loveLetter.style.animation = 'fadeLetter 2s';
-            
-            // Terbangin hearts
-            createFlyingHearts(15);
-        }
-
-        // === FUNGSI RESET ===
-        function reset() {
-            index = 0;
-            cinta = 0;
-            
-            img.src = fotoList[0];
-            fotoKeSpan.innerText = '1';
-            cintaSpan.innerText = '0';
-            loveLetter.innerHTML = "❤️ CILA, KAMU ALASAN AKU TERBANG ❤️";
-            
-            createFlyingHearts(10);
-        }
-
-        // === FUNGSI BG HEARTS ===
-        function initBgHearts() {
-            const bg = document.getElementById('bgHearts');
-            for (let i = 0; i < 20; i++) {
-                const heart = document.createElement('span');
-                heart.innerHTML = '❤️';
-                heart.style.left = Math.random() * 100 + '%';
-                heart.style.animationDelay = Math.random() * 20 + 's';
-                heart.style.fontSize = (Math.random() * 40 + 20) + 'px';
-                bg.appendChild(heart);
-            }
-        }
-
-        // === EVENT LISTENER ===
-        document.getElementById('nextBtn').onclick = gantiFoto;
-        document.getElementById('resetBtn').onclick = reset;
-
-        // Klik di mana aja munculin love
-        document.body.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('btn-cinta')) {
-                createFlyingHearts(5);
-            }
-        });
-
-        // Inisialisasi
-        initBgHearts();
-        createFlyingHearts(10);
-
-        // Pesan selamat datang
-        setTimeout(() => {
-            createFlyingHearts(15);
-        }, 500);
-    </script>
-</body>
-</html>suk {
-            0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
-            50% { opacity: 0.8; transform: scale(1.1) rotate(3deg); }
-            100% { opacity: 1; transform: scale(1) rotate(0); }
-        }
-        
-        .btn-container {
-            display: flex;
-            gap: 15px;
-            margin: 25px 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .btn-cinta {
-            background: linear-gradient(145deg, #ff4d6d, #ff1e4d);
-            color: white;
-            border: none;
-            padding: 18px 30px;
-            font-size: 1.3em;
-            font-weight: bold;
-            border-radius: 60px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(255, 0, 80, 0.5);
-            transition: all 0.3s;
-            border: 2px solid rgba(255,255,255,0.8);
-            flex: 1;
-            min-width: 200px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-cinta::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
-        }
-        
-        .btn-cinta:active {
-            transform: scale(0.95);
-        }
-        
-        .btn-reset {
-            background: linear-gradient(145deg, #a55c7b, #7a3b5e);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 1.1em;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-            border: 2px dashed rgba(255,255,255,0.6);
-            flex: 0.5;
-            min-width: 120px;
-        }
-        
+        </html>     
         .btn-reset:hover {
             background: linear-gradient(145deg, #b86b8b, #8e4a6e);
             transform: translateY(-3px);
