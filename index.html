@@ -1,59 +1,309 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>10 Foto Cila</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ CILA - Cinta Terbang ❤️</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            background: pink;
-            text-align: center;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            font-family: Arial;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            position: relative;
         }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
         .container {
-            background: white;
             max-width: 500px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 30px;
-        }
-        img {
             width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 30px;
-            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 50px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 10;
+            animation: floating 3s ease-in-out infinite;
         }
-        button {
-            background: #ff4d6d;
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b, #ff1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+            margin-bottom: 10px;
+            animation: glowText 2s ease-in-out infinite;
+        }
+        
+        @keyframes glowText {
+            0%, 100% { filter: drop-shadow(0 0 10px #ff1493); }
+            50% { filter: drop-shadow(0 0 30px #ff69b4); }
+        }
+        
+        /* Music Player - AUDIO DARI GITHUB */
+        .music-player {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 60px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+            border: 2px solid white;
+        }
+        
+        audio {
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            outline: none;
+        }
+        
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            border-radius: 30px;
+        }
+        
+        .music-status {
+            color: white;
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .flying-photo-container {
+            position: relative;
+            min-height: 350px;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #fotoCila {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 40px;
+            border: 5px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 20;
+            animation: flyPhoto 3s ease-in-out infinite;
+            object-fit: cover;
+        }
+        
+        @keyframes flyPhoto {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(2deg); }
+            75% { transform: translateY(20px) rotate(-2deg); }
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: flyHeart 6s linear infinite;
+            opacity: 0;
+        }
+        
+        @keyframes flyHeart {
+            0% { transform: translateY(100%) scale(0); opacity: 1; }
+            100% { transform: translateY(-500%) scale(1.5); opacity: 0; }
+        }
+        
+        .love-letter {
+            background: rgba(255, 240, 245, 0.8);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #d43f5e;
+            border-left: 8px solid #ff1493;
+            animation: fadeLetter 2s;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        @keyframes fadeLetter {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        
+        .btn-cinta {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 20px;
-            border-radius: 50px;
-            margin: 10px;
-            width: 200px;
+            padding: 18px 25px;
+            font-size: 1.2em;
+            border-radius: 60px;
+            cursor: pointer;
+            flex: 1;
+            min-width: 200px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid white;
+            box-shadow: 0 10px 20px rgba(255, 20, 147, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-cinta::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .btn-cinta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 20, 147, 0.6);
+        }
+        
+        .counter {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px;
+            border-radius: 40px;
+            font-size: 1.2em;
+            margin-top: 15px;
+            backdrop-filter: blur(5px);
+            border: 2px solid white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .footer {
+            margin-top: 20px;
+            color: white;
+            font-size: 1em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Love background */
+        .bg-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .bg-hearts span {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 60px;
+            animation: bgHeartFloat 20s linear infinite;
+        }
+        
+        @keyframes bgHeartFloat {
+            0% { transform: translateY(100%) rotate(0deg); }
+            100% { transform: translateY(-1000%) rotate(360deg); }
         }
     </style>
 </head>
 <body>
+    <!-- Background Hearts -->
+    <div class="bg-hearts" id="bgHearts"></div>
+    
     <div class="container">
-        <h1>❤️ CILA ❤️</h1>
+        <h1>✨ CILA ✨</h1>
         
-        <!-- Tempat foto -->
-        <img id="fotoCila" src="https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg">
+        <!-- Music Player - PAKE FILE WEBM DARI GITHUB -->
+        <div class="music-player">
+            <audio controls>
+                <source src="https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/videoplayback.webm" type="audio/webm">
+                Browser lu gak support audio WebM.
+            </audio>
+            <div class="music-status" id="musicStatus">🎵 .Feast - Nina</div>
+        </div>
         
-        <br>
+        <!-- Foto Terbang -->
+        <div class="flying-photo-container">
+            <img id="fotoCila" src="" alt="Foto Cila">
+            <div class="floating-hearts" id="floatingHearts"></div>
+        </div>
+        
+        <!-- Pesan Cinta -->
+        <div class="love-letter" id="loveLetter">
+            ❤️ CILA, KAMU ALASAN AKU TERBANG ❤️
+        </div>
         
         <!-- Tombol -->
-        <button onclick="gantiFoto(1)">GANTI FOTO</button>
-        <button onclick="resetFoto()">RESET</button>
+        <div class="btn-group">
+            <button class="btn-cinta" id="nextBtn">
+                ✨ GANTI FOTO ✨
+            </button>
+            <button class="btn-cinta" id="resetBtn">
+                💕 KEMBALI 💕
+            </button>
+        </div>
         
-        <p id="counter">Foto ke 1 dari 10</p>
+        <!-- Counter -->
+        <div class="counter" id="counter">
+            📸 Foto: <span id="fotoKe">1</span>/10 | ❤️ Cinta: <span id="cintaKe">0</span>
+        </div>
+        
+        <div class="footer">
+            💝 Terbanglah bersamaku, Cila 💝
+        </div>
     </div>
 
     <script>
-        // Daftar 10 foto (udah termasuk foto7 yang bener)
+        // === 10 FOTO CILA ===
         const fotoList = [
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0041.jpg',
@@ -67,231 +317,122 @@
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png'
         ];
 
-        let posisi = 0; // mulai dari foto pertama
-        const gambar = document.getElementById('fotoCila');
-        const counter = document.getElementById('counter');
+        // === PESAN ROMANTIS ===
+        const pesanList = [
+            "💕 CILA... SETIAP LIHAT FOTOMU, HATIKU TERBANG 💕",
+            "✨ KAYAK FOTO INI, CINTAKU JUGA TERBANG KE KAMU ✨",
+            "🌹 KAMU BIKIN DUNIA INI JAUH LEBIH INDAH 🌹",
+            "💘 TERBANGLAH SELAMANYA DI HATIKU, CILA 💘",
+            "🥰 SENYUMMU BIKIN HARI INI SEMPURNA 🥰",
+            "💝 10 FOTO, 10 ALASAN CINTA PADAMU 💝",
+            "🌟 KAMU BINTANG YANG PALING TERANG 🌟",
+            "🎈 HIDUP INI INDAH KARENA KAMU 🎈",
+            "💞 CILA, AKU SAYANG KAMU! 💞",
+            "🔥 CILA IS THE BEST! 🔥"
+        ];
 
-        function gantiFoto(arah) {
-            posisi = posisi + 1;
-            if (posisi >= fotoList.length) {
-                posisi = 0; // balik ke awal
+        let index = 0;
+        let cinta = 0;
+        
+        const img = document.getElementById('fotoCila');
+        const fotoKeSpan = document.getElementById('fotoKe');
+        const cintaSpan = document.getElementById('cintaKe');
+        const loveLetter = document.getElementById('loveLetter');
+        
+        // Set foto pertama
+        img.src = fotoList[0];
+
+        // === FUNGSI BUAT HEART TERBANG ===
+        function createFlyingHearts(jumlah = 10) {
+            const container = document.getElementById('floatingHearts');
+            for (let i = 0; i < jumlah; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = ['❤️','💕','💗','💓','💖','💘'][Math.floor(Math.random() * 6)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    container.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 6000);
+                }, i * 200);
             }
-            gambar.src = fotoList[posisi];
-            counter.innerHTML = 'Foto ke ' + (posisi + 1) + ' dari 10';
         }
 
-        function resetFoto() {
-            posisi = 0;
-            gambar.src = fotoList[0];
-            counter.innerHTML = 'Foto ke 1 dari 10';
+        // === FUNGSI GANTI FOTO ===
+        function gantiFoto() {
+            index = (index + 1) % fotoList.length;
+            img.src = fotoList[index];
+            
+            fotoKeSpan.innerText = index + 1;
+            
+            cinta++;
+            cintaSpan.innerText = cinta;
+            
+            // Ganti pesan romantis
+            const randomPesan = pesanList[Math.floor(Math.random() * pesanList.length)];
+            loveLetter.innerHTML = randomPesan;
+            
+            // Animasi love letter
+            loveLetter.style.animation = 'none';
+            void loveLetter.offsetHeight;
+            loveLetter.style.animation = 'fadeLetter 2s';
+            
+            // Terbangin hearts
+            createFlyingHearts(15);
         }
+
+        // === FUNGSI RESET ===
+        function reset() {
+            index = 0;
+            cinta = 0;
+            
+            img.src = fotoList[0];
+            fotoKeSpan.innerText = '1';
+            cintaSpan.innerText = '0';
+            loveLetter.innerHTML = "❤️ CILA, KAMU ALASAN AKU TERBANG ❤️";
+            
+            createFlyingHearts(10);
+        }
+
+        // === FUNGSI BG HEARTS ===
+        function initBgHearts() {
+            const bg = document.getElementById('bgHearts');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('span');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 20 + 's';
+                heart.style.fontSize = (Math.random() * 40 + 20) + 'px';
+                bg.appendChild(heart);
+            }
+        }
+
+        // === EVENT LISTENER ===
+        document.getElementById('nextBtn').onclick = gantiFoto;
+        document.getElementById('resetBtn').onclick = reset;
+
+        // Klik di mana aja munculin love
+        document.body.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('btn-cinta')) {
+                createFlyingHearts(5);
+            }
+        });
+
+        // Inisialisasi
+        initBgHearts();
+        createFlyingHearts(10);
+
+        // Pesan selamat datang
+        setTimeout(() => {
+            createFlyingHearts(15);
+        }, 500);
     </script>
 </body>
-</html>        <h1>CILA</h1>
-        <div class="nama-spesial">❤️ CILA ❤️</div>
-        
-        <div class="love-messages">
-            <p><span>❤️</span> Cila... dari sekian banyak orang, aku bersyukur ketemu kamu</p>
-            <p><span>🥰</span> Senyum kamu tuh bisa bikin hariku langsung cerah</p>
-            <p><span>🌹</span> Setiap hari mikirin kamu tuh udah jadi rutinitas wajib</p>
-            <p><span>💫</span> Kamu bikin dunia keliatan lebih indah, tau!</p>
-        </div>
-        
-        <div class="btn-container">
-            <button class="btn-cinta" id="fotoBtn">
-                ❤️ PENCET SINI BUAT CILA ❤️
-            </button>
-            <button class="btn-kejutan" id="loveBtn">
-                💘 Pencet juga dong 💘
-            </button>
-        </div>
-        
-        <div class="foto-container">
-            <img id="fotoCila" src="" alt="Foto Cila" class="foto-muncul">
-            <p id="fotoHint" style="color: #a55c5c; margin-top: 10px; font-style: italic;">
-                ✨ Foto Cila akan muncul di sini ✨
-            </p>
-        </div>
-        
-        <div class="love-counter">
-            💕 Udah nyatain cinta <span id="hitungCinta">0</span> kali 💕
-        </div>
-        
-        <div class="footer">
-            <p>Dibuat khusus buat Cila ❤️ 2026</p>
-            <p>from someone who really likes you</p>
-        </div>
-    </div>
-
-    <script>
-        let cintaCount = 0;
-
-        function tampilkanFotoCila() {
-            const foto = document.getElementById('fotoCila');
-            const hint = document.getElementById('fotoHint');
-            
-            // === LINK FOTO CILA DARI GITHUB (SUDAH DIISI) ===
-            foto.src = 'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png';
-            
-            foto.style.display = 'block';
-            hint.style.display = 'none';
-            
-            foto.classList.remove('foto-muncul');
-            void foto.offsetWidth;
-            foto.classList.add('foto-muncul');
-            
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => buatLoveTerbang(), i * 100);
-            }
-            
-            cintaCount++;
-            document.getElem<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>❤️ 10 Alasan Cinta buat Cila ❤️</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            background: linear-gradient(135deg, #ff758f, #ff7eb3, #f5b8ea, #b8e1ff);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .container {
-            max-width: 500px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border-radius: 40px;
-            box-shadow: 0 25px 60px rgba(255, 80, 120, 0.5);
-            padding: 25px 20px;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            border: 3px solid white;
-            animation: softGlow 3s ease-in-out infinite;
-        }
-        
-        @keyframes softGlow {
-            0% { box-shadow: 0 20px 60px rgba(255, 80, 120, 0.4); }
-            50% { box-shadow: 0 30px 80px rgba(255, 50, 100, 0.7); }
-            100% { box-shadow: 0 20px 60px rgba(255, 80, 120, 0.4); }
-        }
-        
-        h1 {
-            font-size: 2.7em;
-            color: #d43f5e;
-            text-shadow: 3px 3px 0 rgba(255, 200, 220, 0.8);
-            margin-bottom: 5px;
-        }
-        
-        h1 span {
-            display: inline-block;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .nama-cila {
-            font-size: 3.2em;
-            font-weight: 900;
-            background: linear-gradient(45deg, #ff4d6d, #ff87a5, #ffb3c6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 5px 15px rgba(255, 0, 100, 0.3);
-            margin: 10px 0 20px;
-            letter-spacing: 2px;
-            position: relative;
-        }
-        
-        .nama-cila::before, .nama-cila::after {
-            content: "💕";
-            font-size: 0.8em;
-            margin: 0 10px;
-            opacity: 0.7;
-        }
-        
-        .progress-container {
-            background: rgba(255, 220, 230, 0.7);
-            border-radius: 50px;
-            padding: 5px;
-            margin: 15px 0;
-            border: 1px solid white;
-        }
-        
-        .progress-bar {
-            background: linear-gradient(90deg, #ff4d6d, #ffb3c6);
-            height: 20px;
-            border-radius: 50px;
-            width: 10%;
-            transition: width 0.5s;
-            position: relative;
-            color: white;
-            font-size: 0.8em;
-            line-height: 20px;
-            padding-left: 10px;
-            text-align: left;
-        }
-        
-        .counter-info {
-            display: flex;
-            justify-content: space-between;
-            color: #a53860;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .foto-container {
-            margin: 20px 0;
-            min-height: 350px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        
-        #fotoCila {
-            max-width: 100%;
-            max-height: 350px;
-            width: auto;
-            height: auto;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border: 5px solid white;
-            transition: all 0.5s;
-            display: block;
-            object-fit: cover;
-        }
-        
-        .foto-enter {
-            animation: fotoMasuk 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        @keyframes fotoMasuk {
+</html>suk {
             0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
             50% { opacity: 0.8; transform: scale(1.1) rotate(3deg); }
             100% { opacity: 1; transform: scale(1) rotate(0); }
