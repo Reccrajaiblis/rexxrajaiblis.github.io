@@ -92,60 +92,499 @@
             }
             
             cintaCount++;
-            document.getElementById('hitungCinta').innerText = cintaCount;
+            document.getElem<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>❤️ 10 Alasan Cinta buat Cila ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        function buatLoveTerbang() {
-            const love = document.createElement('div');
-            love.innerHTML = '❤️';
-            love.className = 'floating-heart';
-            love.style.left = Math.random() * window.innerWidth + 'px';
-            love.style.top = (window.innerHeight - 50) + 'px';
-            love.style.fontSize = (Math.random() * 20 + 20) + 'px';
-            document.body.appendChild(love);
-            
-            setTimeout(() => {
-                love.remove();
-            }, 3000);
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background: linear-gradient(135deg, #ff758f, #ff7eb3, #f5b8ea, #b8e1ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            position: relative;
+            overflow-x: hidden;
         }
         
-        function kirimCinta() {
-            cintaCount++;
-            document.getElementById('hitungCinta').innerText = cintaCount;
-            
-            for (let i = 0; i < 8; i++) {
-                setTimeout(() => buatLoveTerbang(), i * 50);
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
+            box-shadow: 0 25px 60px rgba(255, 80, 120, 0.5);
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border: 3px solid white;
+            animation: softGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes softGlow {
+            0% { box-shadow: 0 20px 60px rgba(255, 80, 120, 0.4); }
+            50% { box-shadow: 0 30px 80px rgba(255, 50, 100, 0.7); }
+            100% { box-shadow: 0 20px 60px rgba(255, 80, 120, 0.4); }
+        }
+        
+        h1 {
+            font-size: 2.7em;
+            color: #d43f5e;
+            text-shadow: 3px 3px 0 rgba(255, 200, 220, 0.8);
+            margin-bottom: 5px;
+        }
+        
+        h1 span {
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .nama-cila {
+            font-size: 3.2em;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff4d6d, #ff87a5, #ffb3c6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(255, 0, 100, 0.3);
+            margin: 10px 0 20px;
+            letter-spacing: 2px;
+            position: relative;
+        }
+        
+        .nama-cila::before, .nama-cila::after {
+            content: "💕";
+            font-size: 0.8em;
+            margin: 0 10px;
+            opacity: 0.7;
+        }
+        
+        .progress-container {
+            background: rgba(255, 220, 230, 0.7);
+            border-radius: 50px;
+            padding: 5px;
+            margin: 15px 0;
+            border: 1px solid white;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #ff4d6d, #ffb3c6);
+            height: 20px;
+            border-radius: 50px;
+            width: 10%;
+            transition: width 0.5s;
+            position: relative;
+            color: white;
+            font-size: 0.8em;
+            line-height: 20px;
+            padding-left: 10px;
+            text-align: left;
+        }
+        
+        .counter-info {
+            display: flex;
+            justify-content: space-between;
+            color: #a53860;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .foto-container {
+            margin: 20px 0;
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        #fotoCila {
+            max-width: 100%;
+            max-height: 350px;
+            width: auto;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 5px solid white;
+            transition: all 0.5s;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .foto-enter {
+            animation: fotoMasuk 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes fotoMasuk {
+            0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+            50% { opacity: 0.8; transform: scale(1.1) rotate(3deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0); }
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn-cinta {
+            background: linear-gradient(145deg, #ff4d6d, #ff1e4d);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 0, 80, 0.5);
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.8);
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-cinta::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .btn-cinta:active {
+            transform: scale(0.95);
+        }
+        
+        .btn-reset {
+            background: linear-gradient(145deg, #a55c7b, #7a3b5e);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            border: 2px dashed rgba(255,255,255,0.6);
+            flex: 0.5;
+            min-width: 120px;
+        }
+        
+        .btn-reset:hover {
+            background: linear-gradient(145deg, #b86b8b, #8e4a6e);
+            transform: translateY(-3px);
+        }
+        
+        .pesan-romantis {
+            background: rgba(255, 240, 245, 0.9);
+            border-radius: 30px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 1.2em;
+            color: #9d3b5c;
+            font-style: italic;
+            border-left: 5px solid #ff4d6d;
+            animation: fadePesan 1s;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes fadePesan {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .love-bubble {
+            position: fixed;
+            color: rgba(255, 80, 120, 0.8);
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: bubbleUp 4s linear forwards;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 100, 0.5));
+        }
+        
+        @keyframes bubbleUp {
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 1;
             }
+            100% {
+                transform: translateY(-300px) scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        .footer {
+            margin-top: 15px;
+            color: #a53860;
+            font-size: 0.9em;
+        }
+        
+        .glow-text {
+            animation: glowPulse 2s infinite;
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { text-shadow: 0 0 5px #ff4d6d, 0 0 15px #ffb3c6; }
+            50% { text-shadow: 0 0 15px #ff4d6d, 0 0 30px #ffb3c6; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>✨ UNTUK <span>CILA</span> ✨</h1>
+        <div class="nama-cila">CILA 💕 CILA 💕 CILA</div>
+        
+        <div class="counter-info">
+            <span>💗 Foto ke: <span id="fotoCounter">1</span>/10</span>
+            <span>❤️ Cinta: <span id="cintaCounter">0</span></span>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar" style="width: 10%;">10%</div>
+        </div>
+        
+        <!-- TEMPAT FOTO -->
+        <div class="foto-container">
+            <img id="fotoCila" src="" alt="Foto Cila" class="foto-enter">
+        </div>
+        
+        <!-- TOMBOL UTAMA -->
+        <div class="btn-container">
+            <button class="btn-cinta" id="nextFotoBtn">
+                ❤️ GANTI FOTO CILA ❤️
+            </button>
+            <button class="btn-reset" id="resetBtn">
+                🔄 Ulang
+            </button>
+        </div>
+        
+        <!-- PESAN ROMANTIS RANDOM -->
+        <div class="pesan-romantis" id="pesanRomantis">
+            ❤️ Cila, kamu alasan aku tersenyum hari ini ❤️
+        </div>
+        
+        <div class="footer">
+            <p>10 foto, 10 alasan, 1 hati buat Cila 💕</p>
+        </div>
+    </div>
+
+    <script>
+        // ========== KONFIGURASI FOTO CILA (SUDAH DIISI LENGKAP) ==========
+        const fotoList = [
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg', // foto1
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0041.jpg', // foto2
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0042.jpg', // foto3
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0006.jpg', // foto4
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0007.jpg', // foto5
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0010.jpg', // foto6
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0011.jpg', // foto7 (link sudah diperbaiki)
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0013.jpg', // foto8
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0014.jpg', // foto9
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png' // foto10
+        ];
+        
+        // ========== PESAN ROMANTIS ==========
+        const pesanList = [
+            "❤️ Cila, senyum kamu tuh kayak sunrise di hati aku.",
+            "🥰 Setiap liat foto kamu, rasanya dunia jadi indah.",
+            "💕 Dari 10 foto ini, yang paling aku suka ya kamu aslinya.",
+            "🌹 Cila, kamu tuh alasan aku bangun pagi dengan senyum.",
+            "✨ Kalo cinta itu berat, berarti aku angkat beban tiap hari mikirin kamu.",
+            "😘 10 foto, 10 alasan buat makin cinta sama kamu.",
+            "💗 Kamu tuh kayak bintang, selalu bersinar walaupun gelap.",
+            "🎈 Aku rela antri sepanjang hayat, asal ujungnya kamu.",
+            "💘 Cilaaaa... tahu gak? aku lagi senyum-senyum sendiri ngetik ini.",
+            "🔥 Pokoknya, Cila is the best thing in my life!"
+        ];
+        
+        // ========== VARIABEL ==========
+        let fotoIndex = 0;
+        let cintaCount = 0;
+        let fotoCounter = 1;
+        
+        // ========== ELEMENT REFERENCES ==========
+        const fotoElement = document.getElementById('fotoCila');
+        const fotoCounterElement = document.getElementById('fotoCounter');
+        const cintaCounterElement = document.getElementById('cintaCounter');
+        const progressBar = document.getElementById('progressBar');
+        const pesanElement = document.getElementById('pesanRomantis');
+        
+        // ========== FUNGSI GELEMBUNG LOVE ==========
+        function createLoveBubbles(jumlah = 15) {
+            const loveSymbols = ['❤️', '💕', '💗', '💓', '💖', '💘', '💝', '💞', '💟', '😍', '🥰', '😘'];
             
-            const pesan = [
-                '❤️ Cila aku sayang kamu! ❤️',
-                '🥰 Cila cantik banget! 🥰',
-                '💘 Aku lagi mikirin kamu 💘',
-                '🌹 Buat Cila, yang paling special 🌹'
-            ];
-            
-            if (event && event.target.id === 'loveBtn') {
-                const randomPesan = pesan[Math.floor(Math.random() * pesan.length)];
+            for (let i = 0; i < jumlah; i++) {
                 setTimeout(() => {
-                    alert(randomPesan);
-                }, 200);
+                    const bubble = document.createElement('div');
+                    bubble.className = 'love-bubble';
+                    
+                    const randomLove = loveSymbols[Math.floor(Math.random() * loveSymbols.length)];
+                    bubble.innerHTML = randomLove;
+                    
+                    bubble.style.left = Math.random() * window.innerWidth + 'px';
+                    bubble.style.bottom = '0px';
+                    bubble.style.top = 'auto';
+                    
+                    const size = Math.random() * 30 + 20;
+                    bubble.style.fontSize = size + 'px';
+                    
+                    const hue = Math.random() * 20 + 340;
+                    bubble.style.color = `hsl(${hue}, 80%, 70%)`;
+                    
+                    bubble.style.animationDelay = Math.random() * 0.5 + 's';
+                    
+                    document.body.appendChild(bubble);
+                    
+                    setTimeout(() => {
+                        bubble.remove();
+                    }, 4000);
+                }, i * 50);
             }
         }
         
-        document.getElementById('fotoBtn').addEventListener('click', function(e) {
-            tampilkanFotoCila();
-            kirimCinta.call({ target: { id: 'fotoBtn' } });
-        });
-        
-        document.getElementById('loveBtn').addEventListener('click', function(e) {
-            kirimCinta.call({ target: { id: 'loveBtn' } });
-        });
-        
-        window.addEventListener('load', function() {
+        // ========== FUNGSI GANTI FOTO ==========
+        function gantiFoto() {
+            fotoIndex = (fotoIndex + 1) % fotoList.length;
+            fotoCounter = fotoIndex + 1;
+            
+            fotoElement.src = fotoList[fotoIndex];
+            
+            fotoElement.classList.remove('foto-enter');
+            void fotoElement.offsetWidth;
+            fotoElement.classList.add('foto-enter');
+            
+            fotoCounterElement.innerText = fotoCounter;
+            
+            const progressPercent = (fotoCounter / fotoList.length) * 100;
+            progressBar.style.width = progressPercent + '%';
+            progressBar.innerText = Math.round(progressPercent) + '%';
+            
+            cintaCount++;
+            cintaCounterElement.innerText = cintaCount;
+            
+            const randomPesanIndex = Math.floor(Math.random() * pesanList.length);
+            pesanElement.innerText = pesanList[randomPesanIndex];
+            pesanElement.style.animation = 'none';
+            void pesanElement.offsetHeight;
+            pesanElement.style.animation = 'fadePesan 1s';
+            
+            createLoveBubbles(20);
+            
             setTimeout(() => {
-                alert('❤️ Halo Cila! Web ini khusus buat kamu ❤️');
+                const bigLove = document.createElement('div');
+                bigLove.className = 'love-bubble';
+                bigLove.innerHTML = '💘';
+                bigLove.style.left = '50%';
+                bigLove.style.transform = 'translateX(-50%)';
+                bigLove.style.bottom = '50%';
+                bigLove.style.fontSize = '60px';
+                bigLove.style.animation = 'bubbleUp 3s forwards';
+                document.body.appendChild(bigLove);
+                
+                setTimeout(() => bigLove.remove(), 3000);
+            }, 200);
+        }
+        
+        // ========== FUNGSI RESET ==========
+        function resetWeb() {
+            fotoIndex = 0;
+            fotoCounter = 1;
+            cintaCount = 0;
+            
+            fotoElement.src = fotoList[0];
+            fotoCounterElement.innerText = '1';
+            cintaCounterElement.innerText = '0';
+            progressBar.style.width = '10%';
+            progressBar.innerText = '10%';
+            pesanElement.innerText = "❤️ Cila, kamu alasan aku tersenyum hari ini ❤️";
+            
+            fotoElement.classList.remove('foto-enter');
+            void fotoElement.offsetWidth;
+            fotoElement.classList.add('foto-enter');
+            
+            createLoveBubbles(10);
+        }
+        
+        // ========== FUNGSI INIT ==========
+        function initWeb() {
+            if (fotoList.length > 0) {
+                fotoElement.src = fotoList[0];
+            }
+            
+            progressBar.style.width = '10%';
+            progressBar.innerText = '10%';
+            
+            setTimeout(() => {
+                createLoveBubbles(15);
             }, 500);
+            
+            setTimeout(() => {
+                alert('💕 Halo Cila! Siap-siap lihat 10 fotomu! 💕');
+            }, 1000);
+        }
+        
+        // ========== EVENT LISTENER ==========
+        document.getElementById('nextFotoBtn').addEventListener('click', function(e) {
+            gantiFoto();
+            
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
         });
+        
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            resetWeb();
+        });
+        
+        document.body.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('btn-cinta') && !e.target.classList.contains('btn-reset')) {
+                createLoveBubbles(5);
+            }
+        });
+        
+        window.addEventListener('load', initWeb);
     </script>
 </body>
-    </html>
+</html>
