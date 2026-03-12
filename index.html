@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website dari HP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .btn {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔥 Halo Dunia! 🔥</h1>
+        <p>Ini website pertama gue yang dibuat <br> <strong>modal HP doang!</strong></p>
+        <p>Dibuat oleh: <br> @username_github_lu</p>
+        <p>📱 | 💻 | 🌐</p>
+        <a href="#" class="btn" onclick="alert('Lu keren bro!')">Klik Gue!</a>
+    </div>
+    
+    <script>
+        // Efek keren pas di-load
+        alert('Selamat datang di website HP!');
+        
+        // Hitung berapa kali dibuka
+        let visits = localStorage.getItem('visits') || 0;
+        visits = parseInt(visits) + 1;
+        localStorage.setItem('visits', visits);
+        
+        console.log('Website ini udah dibuka ' + visits + ' kali');
+    </script>
+</body>
+  </html>
