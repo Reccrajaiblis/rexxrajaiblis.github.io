@@ -1,74 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Website dari HP</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Untuk Cila Tercinta ❤️</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .card {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px;
-            backdrop-filter: blur(10px);
-        }
-        .btn {
-            background: white;
-            color: #667eea;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1em;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            transform: scale(1.05);
-        }
+        /* === Semua gaya CSS-nya sama seperti sebelumnya, tidak perlu diubah === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; overflow-x: hidden; }
+        .container { max-width: 500px; width: 100%; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-radius: 30px; box-shadow: 0 20px 60px rgba(255, 75, 100, 0.4); padding: 30px 20px; text-align: center; position: relative; z-index: 10; border: 3px solid white; animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        h1 { font-size: 2.5em; margin-bottom: 10px; color: #d43f5e; text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.8); }
+        h1::before, h1::after { content: "❤️"; font-size: 1.2em; margin: 0 10px; animation: heartbeat 1.5s ease-in-out infinite; }
+        @keyframes heartbeat { 0% { transform: scale(1); } 25% { transform: scale(1.3); color: #ff4d6d; } 50% { transform: scale(1); } 75% { transform: scale(1.2); color: #c9184a; } 100% { transform: scale(1); } }
+        .nama-spesial { font-size: 2.8em; font-weight: bold; color: #c44569; background: linear-gradient(45deg, #ffb6c1, #ffe4e1); display: inline-block; padding: 10px 30px; border-radius: 60px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid white; text-transform: uppercase; letter-spacing: 3px; }
+        .love-messages { background: rgba(255, 255, 255, 0.7); border-radius: 20px; padding: 20px; margin: 20px 0; border-left: 5px solid #ff758f; text-align: left; }
+        .love-messages p { font-size: 1.1em; margin-bottom: 12px; color: #5d2e3e; display: flex; align-items: center; }
+        .love-messages span { font-size: 1.5em; margin-right: 10px; }
+        .btn-container { display: flex; flex-direction: column; gap: 15px; margin: 30px 0 20px; }
+        .btn-cinta { background: linear-gradient(45deg, #ff4d6d, #ff8fa3); color: white; border: none; padding: 18px 20px; font-size: 1.4em; font-weight: bold; border-radius: 60px; cursor: pointer; box-shadow: 0 10px 20px rgba(255, 64, 129, 0.4); transition: all 0.3s; border: 2px solid rgba(255,255,255,0.5); }
+        .btn-cinta:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255, 64, 129, 0.6); }
+        .btn-kejutan { background: linear-gradient(45deg, #a55c5c, #d98c8c); color: white; border: none; padding: 15px; font-size: 1.3em; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s; border: 2px dashed white; }
+        .btn-kejutan:hover { background: linear-gradient(45deg, #b06d6d, #e6a2a2); transform: scale(1.02); }
+        .foto-container { margin: 25px 0; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        #fotoCila { max-width: 100%; width: 300px; height: auto; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 5px solid white; transition: all 0.5s; display: none; }
+        .foto-muncul { animation: munculDramatis 0.8s ease-out; }
+        @keyframes munculDramatis { 0% { opacity: 0; transform: scale(0.3) rotate(-10deg); } 50% { opacity: 1; transform: scale(1.1) rotate(2deg); } 100% { opacity: 1; transform: scale(1) rotate(0); } }
+        .love-counter { background: rgba(255, 240, 245, 0.8); border-radius: 40px; padding: 12px; margin-top: 20px; font-weight: bold; color: #b23b4b; border: 1px solid #ffb6c1; }
+        .floating-heart { position: fixed; color: #ff4d6d; font-size: 20px; pointer-events: none; z-index: 999; animation: floatUp 3s linear forwards; }
+        @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-200px) scale(1.5); opacity: 0; } }
+        .footer { margin-top: 30px; font-size: 0.9em; color: #a5556c; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>🔥 Halo Dunia! 🔥</h1>
-        <p>Ini website pertama gue yang dibuat <br> <strong>modal HP doang!</strong></p>
-        <p>Dibuat oleh: <br> @username_github_lu</p>
-        <p>📱 | 💻 | 🌐</p>
-        <a href="#" class="btn" onclick="alert('Lu keren bro!')">Klik Gue!</a>
+    <div class="container">
+        <h1>CILA</h1>
+        <div class="nama-spesial">❤️ CILA ❤️</div>
+        
+        <div class="love-messages">
+            <p><span>❤️</span> Cila... dari sekian banyak orang, aku bersyukur ketemu kamu</p>
+            <p><span>🥰</span> Senyum kamu tuh bisa bikin hariku langsung cerah</p>
+            <p><span>🌹</span> Setiap hari mikirin kamu tuh udah jadi rutinitas wajib</p>
+            <p><span>💫</span> Kamu bikin dunia keliatan lebih indah, tau!</p>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn-cinta" id="fotoBtn">
+                ❤️ PENCET SINI BUAT CILA ❤️
+            </button>
+            <button class="btn-kejutan" id="loveBtn">
+                💘 Pencet juga dong 💘
+            </button>
+        </div>
+        
+        <div class="foto-container">
+            <img id="fotoCila" src="" alt="Foto Cila" class="foto-muncul">
+            <p id="fotoHint" style="color: #a55c5c; margin-top: 10px; font-style: italic;">
+                ✨ Foto Cila akan muncul di sini ✨
+            </p>
+        </div>
+        
+        <div class="love-counter">
+            💕 Udah nyatain cinta <span id="hitungCinta">0</span> kali 💕
+        </div>
+        
+        <div class="footer">
+            <p>Dibuat khusus buat Cila ❤️ 2026</p>
+            <p>from someone who really likes you</p>
+        </div>
     </div>
-    
+
     <script>
-        // Efek keren pas di-load
-        alert('Selamat datang di website HP!');
+        let cintaCount = 0;
+
+        function tampilkanFotoCila() {
+            const foto = document.getElementById('fotoCila');
+            const hint = document.getElementById('fotoHint');
+            
+            // === LINK FOTO CILA DARI GITHUB (SUDAH DIISI) ===
+            foto.src = 'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png';
+            
+            foto.style.display = 'block';
+            hint.style.display = 'none';
+            
+            foto.classList.remove('foto-muncul');
+            void foto.offsetWidth;
+            foto.classList.add('foto-muncul');
+            
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => buatLoveTerbang(), i * 100);
+            }
+            
+            cintaCount++;
+            document.getElementById('hitungCinta').innerText = cintaCount;
+        }
         
-        // Hitung berapa kali dibuka
-        let visits = localStorage.getItem('visits') || 0;
-        visits = parseInt(visits) + 1;
-        localStorage.setItem('visits', visits);
+        function buatLoveTerbang() {
+            const love = document.createElement('div');
+            love.innerHTML = '❤️';
+            love.className = 'floating-heart';
+            love.style.left = Math.random() * window.innerWidth + 'px';
+            love.style.top = (window.innerHeight - 50) + 'px';
+            love.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            document.body.appendChild(love);
+            
+            setTimeout(() => {
+                love.remove();
+            }, 3000);
+        }
         
-        console.log('Website ini udah dibuka ' + visits + ' kali');
+        function kirimCinta() {
+            cintaCount++;
+            document.getElementById('hitungCinta').innerText = cintaCount;
+            
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => buatLoveTerbang(), i * 50);
+            }
+            
+            const pesan = [
+                '❤️ Cila aku sayang kamu! ❤️',
+                '🥰 Cila cantik banget! 🥰',
+                '💘 Aku lagi mikirin kamu 💘',
+                '🌹 Buat Cila, yang paling special 🌹'
+            ];
+            
+            if (event && event.target.id === 'loveBtn') {
+                const randomPesan = pesan[Math.floor(Math.random() * pesan.length)];
+                setTimeout(() => {
+                    alert(randomPesan);
+                }, 200);
+            }
+        }
+        
+        document.getElementById('fotoBtn').addEventListener('click', function(e) {
+            tampilkanFotoCila();
+            kirimCinta.call({ target: { id: 'fotoBtn' } });
+        });
+        
+        document.getElementById('loveBtn').addEventListener('click', function(e) {
+            kirimCinta.call({ target: { id: 'loveBtn' } });
+        });
+        
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                alert('❤️ Halo Cila! Web ini khusus buat kamu ❤️');
+            }, 500);
+        });
     </script>
 </body>
-  </html>
+    </html>
