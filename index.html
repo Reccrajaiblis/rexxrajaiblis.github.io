@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>❤️ CILA - Cinta Terbang ❤️</title>
+    <title>❤️ 10 Foto Cila ❤️</title>
     <style>
         * {
             margin: 0;
@@ -12,298 +12,133 @@
         }
         
         body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
             min-height: 100vh;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            font-family: 'Arial', sans-serif;
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            font-family: Arial, sans-serif;
         }
         
         .container {
             max-width: 500px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(15px);
-            border-radius: 50px;
-            padding: 30px 20px;
+            background: white;
+            border-radius: 40px;
+            padding: 25px;
             text-align: center;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-            border: 3px solid rgba(255, 255, 255, 0.5);
-            position: relative;
-            z-index: 10;
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            box-shadow: 0 20px 50px rgba(255, 0, 100, 0.3);
         }
         
         h1 {
-            font-size: 3.5em;
-            background: linear-gradient(45deg, #ffd700, #ff6b6b, #ff1493);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
-            margin-bottom: 10px;
-            animation: glowText 2s ease-in-out infinite;
+            color: #d43f5e;
+            font-size: 3em;
+            margin-bottom: 20px;
         }
         
-        @keyframes glowText {
-            0%, 100% { filter: drop-shadow(0 0 10px #ff1493); }
-            50% { filter: drop-shadow(0 0 30px #ff69b4); }
-        }
-        
-        /* Music Player - AUDIO DARI GITHUB */
+        /* Music Player */
         .music-player {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 60px;
-            padding: 20px;
+            background: #ffe4e9;
+            border-radius: 30px;
+            padding: 15px;
             margin: 20px 0;
-            backdrop-filter: blur(5px);
-            border: 2px solid white;
         }
         
         audio {
             width: 100%;
             height: 50px;
-            border-radius: 30px;
-            outline: none;
         }
         
-        audio::-webkit-media-controls-panel {
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
-            border-radius: 30px;
-        }
-        
-        .music-status {
-            color: white;
-            font-size: 1.2em;
-            margin-top: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .flying-photo-container {
-            position: relative;
+        .foto-container {
+            margin: 20px 0;
             min-height: 350px;
-            margin: 30px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         
         #fotoCila {
             max-width: 100%;
             max-height: 350px;
-            border-radius: 40px;
-            border: 5px solid white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            position: relative;
-            z-index: 20;
-            animation: flyPhoto 3s ease-in-out infinite;
-            object-fit: cover;
-        }
-        
-        @keyframes flyPhoto {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-20px) rotate(2deg); }
-            75% { transform: translateY(20px) rotate(-2deg); }
-        }
-        
-        .floating-hearts {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        
-        .heart {
-            position: absolute;
-            font-size: 30px;
-            animation: flyHeart 6s linear infinite;
-            opacity: 0;
-        }
-        
-        @keyframes flyHeart {
-            0% { transform: translateY(100%) scale(0); opacity: 1; }
-            100% { transform: translateY(-500%) scale(1.5); opacity: 0; }
-        }
-        
-        .love-letter {
-            background: rgba(255, 240, 245, 0.8);
             border-radius: 30px;
-            padding: 20px;
-            margin: 20px 0;
-            font-size: 1.2em;
-            color: #d43f5e;
-            border-left: 8px solid #ff1493;
-            animation: fadeLetter 2s;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(5px);
-        }
-        
-        @keyframes fadeLetter {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 25px 0;
+            border: 5px solid #ffb6c1;
         }
         
         .btn-cinta {
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            background: #ff4d6d;
             color: white;
             border: none;
-            padding: 18px 25px;
+            padding: 15px 30px;
             font-size: 1.2em;
-            border-radius: 60px;
+            border-radius: 50px;
             cursor: pointer;
-            flex: 1;
-            min-width: 200px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            border: 2px solid white;
-            box-shadow: 0 10px 20px rgba(255, 20, 147, 0.4);
-            position: relative;
-            overflow: hidden;
+            margin: 10px 0;
+            width: 100%;
         }
         
-        .btn-cinta::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
-        }
-        
-        .btn-cinta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(255, 20, 147, 0.6);
+        .btn-reset {
+            background: #a55c7b;
+            margin-top: 5px;
         }
         
         .counter {
-            background: rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 12px;
-            border-radius: 40px;
+            margin: 15px 0;
             font-size: 1.2em;
-            margin-top: 15px;
-            backdrop-filter: blur(5px);
-            border: 2px solid white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #a53860;
+        }
+        
+        .love-letter {
+            background: #ffe4e9;
+            padding: 15px;
+            border-radius: 30px;
+            margin: 15px 0;
+            font-size: 1.1em;
+            color: #d43f5e;
+            min-height: 70px;
         }
         
         .footer {
             margin-top: 20px;
-            color: white;
-            font-size: 1em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        /* Love background */
-        .bg-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .bg-hearts span {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.2);
-            font-size: 60px;
-            animation: bgHeartFloat 20s linear infinite;
-        }
-        
-        @keyframes bgHeartFloat {
-            0% { transform: translateY(100%) rotate(0deg); }
-            100% { transform: translateY(-1000%) rotate(360deg); }
+            color: #a53860;
         }
     </style>
 </head>
 <body>
-    <!-- Background Hearts -->
-    <div class="bg-hearts" id="bgHearts"></div>
-    
     <div class="container">
-        <h1>✨ CILA ✨</h1>
+        <h1>❤️ CILA ❤️</h1>
         
-        <!-- Music Player - PAKE FILE WEBM DARI GITHUB -->
+        <!-- Player Lagu -->
         <div class="music-player">
             <audio controls>
                 <source src="https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/videoplayback.webm" type="audio/webm">
-                Browser lu gak support audio WebM.
+                Browser tidak support
             </audio>
-            <div class="music-status" id="musicStatus">🎵 .Feast - Nina</div>
         </div>
         
-        <!-- Foto Terbang -->
-        <div class="flying-photo-container">
-            <img id="fotoCila" src="" alt="Foto Cila">
-            <div class="floating-hearts" id="floatingHearts"></div>
+        <!-- Foto -->
+        <div class="foto-container">
+            <img id="fotoCila" src="">
         </div>
         
-        <!-- Pesan Cinta -->
-        <div class="love-letter" id="loveLetter">
-            ❤️ CILA, KAMU ALASAN AKU TERBANG ❤️
+        <!-- Pesan -->
+        <div class="love-letter" id="pesan">
+            ❤️ CILA, KAMU SPESIAL ❤️
         </div>
         
         <!-- Tombol -->
-        <div class="btn-group">
-            <button class="btn-cinta" id="nextBtn">
-                ✨ GANTI FOTO ✨
-            </button>
-            <button class="btn-cinta" id="resetBtn">
-                💕 KEMBALI 💕
-            </button>
-        </div>
+        <button class="btn-cinta" id="nextBtn">GANTI FOTO</button>
+        <button class="btn-cinta btn-reset" id="resetBtn">RESET</button>
         
         <!-- Counter -->
         <div class="counter" id="counter">
-            📸 Foto: <span id="fotoKe">1</span>/10 | ❤️ Cinta: <span id="cintaKe">0</span>
+            Foto ke: <span id="fotoKe">1</span>/10
         </div>
         
         <div class="footer">
-            💝 Terbanglah bersamaku, Cila 💝
+            ✨ Buat Cila tersayang ✨
         </div>
     </div>
 
     <script>
-        // === 10 FOTO CILA ===
+        // 10 FOTO CILA
         const fotoList = [
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0041.jpg',
@@ -311,6 +146,50 @@
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0006.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0007.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0010.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0011.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0013.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0014.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png'
+        ];
+
+        // Pesan romantis
+        const pesanList = [
+            "CILA... KAMU CANTIK BANGET!",
+            "SENYUM KAMU BIKIN HARI INI CERAH",
+            "SETIAP FOTO KAMU SELALU BUAT AKU TERBAWA",
+            "KAMU BINTANG YANG PALING TERANG",
+            "CILA, AKU SAYANG KAMU!"
+        ];
+
+        let index = 0;
+        const img = document.getElementById('fotoCila');
+        const fotoSpan = document.getElementById('fotoKe');
+        const pesanDiv = document.getElementById('pesan');
+
+        img.src = fotoList[0];
+
+        function gantiFoto() {
+            index = (index + 1) % fotoList.length;
+            img.src = fotoList[index];
+            fotoSpan.innerText = index + 1;
+            
+            // Ganti pesan random
+            const random = Math.floor(Math.random() * pesanList.length);
+            pesanDiv.innerText = "❤️ " + pesanList[random] + " ❤️";
+        }
+
+        function reset() {
+            index = 0;
+            img.src = fotoList[0];
+            fotoSpan.innerText = '1';
+            pesanDiv.innerText = "❤️ CILA, KAMU SPESIAL ❤️";
+        }
+
+        document.getElementById('nextBtn').onclick = gantiFoto;
+        document.getElementById('resetBtn').onclick = reset;
+    </script>
+</body>
+</html>aiblis.github.io/main/IMG-20260309-WA0010.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0011.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0013.jpg',
             'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0014.jpg',
@@ -782,3 +661,195 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ 10 Foto Cila ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 40px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(255, 0, 100, 0.3);
+        }
+        
+        h1 {
+            color: #d43f5e;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        /* Music Player */
+        .music-player {
+            background: #ffe4e9;
+            border-radius: 30px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        audio {
+            width: 100%;
+            height: 50px;
+        }
+        
+        .foto-container {
+            margin: 20px 0;
+            min-height: 350px;
+        }
+        
+        #fotoCila {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 30px;
+            border: 5px solid #ffb6c1;
+        }
+        
+        .btn-cinta {
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 100%;
+        }
+        
+        .btn-reset {
+            background: #a55c7b;
+            margin-top: 5px;
+        }
+        
+        .counter {
+            margin: 15px 0;
+            font-size: 1.2em;
+            color: #a53860;
+        }
+        
+        .love-letter {
+            background: #ffe4e9;
+            padding: 15px;
+            border-radius: 30px;
+            margin: 15px 0;
+            font-size: 1.1em;
+            color: #d43f5e;
+            min-height: 70px;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            color: #a53860;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>❤️ CILA ❤️</h1>
+        
+        <!-- Player Lagu -->
+        <div class="music-player">
+            <audio controls>
+                <source src="https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/videoplayback.webm" type="audio/webm">
+                Browser tidak support
+            </audio>
+        </div>
+        
+        <!-- Foto -->
+        <div class="foto-container">
+            <img id="fotoCila" src="">
+        </div>
+        
+        <!-- Pesan -->
+        <div class="love-letter" id="pesan">
+            ❤️ CILA, KAMU SPESIAL ❤️
+        </div>
+        
+        <!-- Tombol -->
+        <button class="btn-cinta" id="nextBtn">GANTI FOTO</button>
+        <button class="btn-cinta btn-reset" id="resetBtn">RESET</button>
+        
+        <!-- Counter -->
+        <div class="counter" id="counter">
+            Foto ke: <span id="fotoKe">1</span>/10
+        </div>
+        
+        <div class="footer">
+            ✨ Buat Cila tersayang ✨
+        </div>
+    </div>
+
+    <script>
+        // 10 FOTO CILA
+        const fotoList = [
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0041.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0042.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0006.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0007.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0010.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0011.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0013.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0014.jpg',
+            'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png'
+        ];
+
+        // Pesan romantis
+        const pesanList = [
+            "CILA... KAMU CANTIK BANGET!",
+            "SENYUM KAMU BIKIN HARI INI CERAH",
+            "SETIAP FOTO KAMU SELALU BUAT AKU TERBAWA",
+            "KAMU BINTANG YANG PALING TERANG",
+            "CILA, AKU SAYANG KAMU!"
+        ];
+
+        let index = 0;
+        const img = document.getElementById('fotoCila');
+        const fotoSpan = document.getElementById('fotoKe');
+        const pesanDiv = document.getElementById('pesan');
+
+        img.src = fotoList[0];
+
+        function gantiFoto() {
+            index = (index + 1) % fotoList.length;
+            img.src = fotoList[index];
+            fotoSpan.innerText = index + 1;
+            
+            // Ganti pesan random
+            const random = Math.floor(Math.random() * pesanList.length);
+            pesanDiv.innerText = "❤️ " + pesanList[random] + " ❤️";
+        }
+
+        function reset() {
+            index = 0;
+            img.src = fotoList[0];
+            fotoSpan.innerText = '1';
+            pesanDiv.innerText = "❤️ CILA, KAMU SPESIAL ❤️";
+        }
+
+        document.getElementById('nextBtn').onclick = gantiFoto;
+        document.getElementById('resetBtn').onclick = reset;
+    </script>
+</body>
+                         </html>
