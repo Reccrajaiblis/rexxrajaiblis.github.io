@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 CILA 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #ff4d7d;
+  --lpink: #ffb3c6;
+  --pale: #fff0f5;
+  --deep: #c2185b;
+  --shadow: rgba(255,77,125,0.3);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #ffe6ee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+  overflow-x: hidden;
+}
+#bgHearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.bh {
+  position: absolute;
+  opacity: 0.07;
+  animation: bhUp linear infinite;
+}
+@keyframes bhUp {
+  from { transform: translateY(110vh); opacity: 0.07; }
+  to   { transform: translateY(-10vh); opacity: 0; }
+}
+.header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 20px 16px;
+}
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8em, 12vw, 4.5em);
+  color: var(--pink);
+  text-shadow: 0 4px 20px var(--shadow);
+  letter-spacing: 4px;
+}
+.header p {
+  font-size: 0.85em;
+  color: var(--deep);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+.card {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 32px;
+  width: min(480px, 92vw);
+  padding: 22px;
+  box-shadow: 0 20px 60px var(--shadow);
+}
+.music {
+  background: linear-gradient(135deg, #ffe0ea, #ffc2d4);
+  border-radius: 18px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.music-icon {
+  font-size: 1.8em;
+  animation: spin 3s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.music-label {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--deep);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+audio {
+  width: 100%;
+  height: 34px;
+}
+.foto-wrap {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--pale);
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+#foto {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.35s ease;
+}
+.foto-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 70px;
+  background: linear-gradient(transparent, rgba(255,77,125,0.25));
+  pointer-events: none;
+}
+.foto-badge {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: rgba(255,255,255,0.92);
+  color: var(--pink);
+  font-size: 0.82em;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.pesan {
+  background: linear-gradient(135deg, #fff0f5, #ffe4ee);
+  border-radius: 18px;
+  border-left: 4px solid var(--pink);
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#pesanText {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--deep);
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.5;
+}
+.fade-in {
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.progress-wrap {
+  background: var(--pale);
+  border-radius: 20px;
+  height: 7px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+#progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--pink), var(--lpink));
+  border-radius: 20px;
+  transition: width 0.5s ease;
+  width: 10%;
+}
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.btn {
+  flex: 1;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:active { transform: scale(0.95); }
+.btn-next {
+  background: linear-gradient(135deg, var(--pink), #ff85a1);
+  color: #fff;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+.btn-reset {
+  background: var(--pale);
+  color: var(--deep);
+  border: 2px solid var(--lpink);
+}
+.btn-reset:hover {
+  background: var(--lpink);
+  color: #fff;
+}
+.counter {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  color: var(--deep);
+  font-weight: 600;
+  opacity: 0.75;
+}
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 20px;
+  color: var(--deep);
+  font-size: 0.82em;
+  opacity: 0.55;
+}
+.fh {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  animation: fhUp 2.8s ease-out forwards;
+}
+@keyframes fhUp {
+  0%   { transform: translateY(0) scale(0.5); opacity: 1; }
+  80%  { opacity: 0.7; }
+  100% { transform: translateY(-220px) scale(1.2); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div id="bgHearts"></div>
+
+<div class="header">
+  <h1>✨ CILA ✨</h1>
+  <p>10 Foto &bull; 10 Alasan Cinta</p>
+</div>
+
+<div class="card">
+
+  <div class="music">
+    <div class="music-icon">💿</div>
+    <div style="flex:1">
+      <div class="music-label">🎵 Lagu Buat Cila</div>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/videoplayback.webm" type="audio/webm">
+      </audio>
+    </div>
+  </div>
+
+  <div class="foto-wrap">
+    <img id="foto" src="" alt="Foto Cila">
+    <div class="foto-overlay"></div>
+    <div class="foto-badge">📸 <span id="fotoNum">1</span>/10</div>
+  </div>
+
+  <div class="pesan">
+    <div id="pesanText">❤️ Cila, kamu alasan aku tersenyum hari ini ❤️</div>
+  </div>
+
+  <div class="progress-wrap">
+    <div id="progressBar"></div>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn btn-next" id="nextBtn">❤️ Foto Selanjutnya</button>
+    <button class="btn btn-reset" id="resetBtn">🔄 Ulang</button>
+  </div>
+
+  <div class="counter">
+    <span>📸 Foto ke-<span id="fotoCounter">1</span> dari 10</span>
+    <span>💖 <span id="cintaCounter">0</span> kali klik</span>
+  </div>
+
+</div>
+
+<div class="footer">💝 Dibuat dengan cinta, buat Cila 💝</div>
+
+<script>
+var fotos = [
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0040.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0041.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260308-WA0042.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0006.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0007.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0010.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0011.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0013.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/IMG-20260309-WA0014.jpg',
+  'https://raw.githubusercontent.com/Reccrajaiblis/rexxrajaiblis.github.io/main/Proyek%20Baru%201%20%5B9EBBBA2%5D.png'
+];
+
+var pesans = [
+  "❤️ Cila, senyum kamu kayak sunrise di hati aku.",
+  "🥰 Setiap liat foto kamu, rasanya dunia jadi indah.",
+  "💕 Dari 10 foto ini, yang paling aku suka ya kamu aslinya.",
+  "🌹 Cila, kamu alasan aku bangun pagi dengan senyum.",
+  "✨ Kalo cinta itu berat, berarti aku angkat beban tiap hari mikirin kamu.",
+  "😘 10 foto, 10 alasan buat makin cinta sama kamu.",
+  "💗 Kamu tuh kayak bintang, selalu bersinar walaupun gelap.",
+  "🎈 Aku rela antri sepanjang hayat, asal ujungnya kamu.",
+  "💘 Cilaaaa... tahu gak? aku lagi senyum-senyum sendiri ngetik ini.",
+  "🔥 Pokoknya, Cila is the best thing in my life!"
+];
+
+var idx = 0;
+var klik = 0;
+var sym = ['❤️','💕','💗','💖','💘','💝'];
+
+var elFoto = document.getElementById('foto');
+var elNum  = document.getElementById('fotoNum');
+var elFotoC = document.getElementById('fotoCounter');
+var elCinta = document.getElementById('cintaCounter');
+var elPesan = document.getElementById('pesanText');
+var elProg  = document.getElementById('progressBar');
+
+function setProgress() {
+  elProg.style.width = ((idx + 1) / fotos.length * 100) + '%';
+}
+
+function setPesan(teks) {
+  elPesan.classList.remove('fade-in');
+  void elPesan.offsetWidth;
+  elPesan.innerText = teks;
+  elPesan.classList.add('fade-in');
+}
+
+function spawnHearts(x, y, n) {
+  for (var i = 0; i < n; i++) {
+    (function(i) {
+      setTimeout(function() {
+        var h = document.createElement('div');
+        h.className = 'fh';
+        h.innerHTML = sym[Math.floor(Math.random() * sym.length)];
+        h.style.left = (x + (Math.random() - 0.5) * 60) + 'px';
+        h.style.top  = y + 'px';
+        h.style.fontSize = (14 + Math.random() * 14) + 'px';
+        document.body.appendChild(h);
+        setTimeout(function() { h.remove(); }, 2800);
+      }, i * 60);
+    })(i);
+  }
+}
+
+function initBg() {
+  var bg = document.getElementById('bgHearts');
+  for (var i = 0; i < 14; i++) {
+    var h = document.createElement('div');
+    h.className = 'bh';
+    h.innerHTML = sym[Math.floor(Math.random() * sym.length)];
+    h.style.left = Math.random() * 100 + '%';
+    h.style.fontSize = (16 + Math.random() * 18) + 'px';
+    h.style.animationDuration = (9 + Math.random() * 11) + 's';
+    h.style.animationDelay = (Math.random() * 10) + 's';
+    bg.appendChild(h);
+  }
+}
+
+function gantiFoto() {
+  idx = (idx + 1) % fotos.length;
+  klik++;
+  elFoto.style.opacity = '0';
+  setTimeout(function() {
+    elFoto.src = fotos[idx];
+    elFoto.style.opacity = '1';
+  }, 300);
+  elNum.innerText   = idx + 1;
+  elFotoC.innerText = idx + 1;
+  elCinta.innerText = klik;
+  setProgress();
+  setPesan(pesans[idx]);
+}
+
+function reset() {
+  idx = 0;
+  klik = 0;
+  elFoto.style.opacity = '0';
+  setTimeout(function() {
+    elFoto.src = fotos[0];
+    elFoto.style.opacity = '1';
+  }, 300);
+  elNum.innerText   = '1';
+  elFotoC.innerText = '1';
+  elCinta.innerText = '0';
+  setProgress();
+  setPesan("❤️ Cila, kamu alasan aku tersenyum hari ini ❤️");
+}
+
+elFoto.src = fotos[0];
+setProgress();
+initBg();
+
+document.getElementById('nextBtn').addEventListener('click', function(e) {
+  gantiFoto();
+  spawnHearts(e.clientX, e.clientY, 10);
+});
+
+document.getElementById('resetBtn').addEventListener('click', function(e) {
+  reset();
+  spawnHearts(e.clientX, e.clientY, 6);
+});
+
+document.body.addEventListener('click', function(e) {
+  if (!e.target.closest('.btn')) {
+    spawnHearts(e.clientX, e.clientY, 4);
+  }
+});
+</script>
+
+</body>
+</html>
